@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSL Certificates - Secure Your Website</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, rgba(0, 51, 102, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url('cyb.webp');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+      color: #222;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    color: #222;
+    font-weight: 700;
+  }
+  .home-logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 1000;
+  }
+  .home-logo:hover,
+  .home-logo:focus {
+    transform: scale(1.1);
+    outline: none;
+  }
+  .section {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+  }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      border-left: 4px solid #008080; /* teal accent */
+      padding: 20px 25px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 128, 128, 0.3);
+    }
+    .card h3 {
+      color: #008080;
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+      color: #444;
+    }
+    .info-icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-color: #008080;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      border-radius: 50%;
+      margin-left: 5px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .duration-options {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .duration-options label {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+    .btn-buy {
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex: 1;
+      text-align: center;
+    }
+    .btn-buy:hover {
+      background-color: #e03e3e;
+    }
+    .btn-cart {
+      background-color: #008080;
+      border: none;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex: 1;
+      text-align: center;
+    }
+    .btn-cart:hover {
+      background-color: #006666;
+    }
+    .links {
+      font-size: 0.9rem;
+      color: #6a0dad;
+      display: flex;
+      gap: 15px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .links span:hover {
+      text-decoration: underline;
+    }
+    .dropdown-container {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    select {
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+      .btn-buy, .btn-cart {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>SSL Certificates</h1>
+  <a href="index.html" aria-label="Home" class="home-logo" title="Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#008080" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </a>
+
+  <section class="section" aria-label="DV SSL Certificates">
+    <h2>DV SSL Certificates</h2>
+    <div class="cards">
+      <article class="card" tabindex="0">
+        <h3>Single Domain</h3>
+        <p>Secures websites, blogs, and pages with basic encryption.<span class="info-icon" title="Domain Validation SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="dv-single-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="dv-single-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="dv-single-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹1799 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button" onclick="alert('Redirecting to payment gateway')">Buy Now</button>
+          <button class="btn-cart" type="button" onclick="alert('Redirecting to payment gateway')">Add To Cart</button>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>Wildcard</h3>
+        <p>Secure all subdomains with one certificate.<span class="info-icon" title="Wildcard SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="dv-wildcard-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="dv-wildcard-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="dv-wildcard-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹2733 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>Multi-Domain</h3>
+        <p>Secure multiple domains with one certificate.<span class="info-icon" title="Multi-Domain SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="dv-multi-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="dv-multi-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="dv-multi-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹5399 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="dropdown-container">
+          <label for="dv-multi-domains">Domains</label>
+          <select id="dv-multi-domains" name="dv-multi-domains" aria-label="Select number of domains">
+            <option value="1">Upto 1</option>
+            <option value="2">Upto 2</option>
+            <option value="3">Upto 3</option>
+            <option value="4" selected>Upto 4</option>
+            <option value="5">Upto 5</option>
+          </select>
+          <span>Each Extra SAN Cost ₹2417 /Yr</span>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>Multi-Domain with Wildcard</h3>
+        <p>Secures entire network of sites with one certificate.<span class="info-icon" title="Multi-Domain Wildcard SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="dv-multi-wildcard-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="dv-multi-wildcard-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="dv-multi-wildcard-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹16400 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="dropdown-container">
+          <label for="dv-multi-wildcard-domains">Domains</label>
+          <select id="dv-multi-wildcard-domains" name="dv-multi-wildcard-domains" aria-label="Select number of domains">
+            <option value="1">Upto 1</option>
+            <option value="2">Upto 2</option>
+            <option value="3">Upto 3</option>
+            <option value="4" selected>Upto 4</option>
+            <option value="5">Upto 5</option>
+          </select>
+          <span>Each Extra SAN Cost ₹19167 /Yr</span>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-label="OV SSL Certificates">
+    <h2>OV SSL Certificates</h2>
+    <div class="cards">
+      <article class="card" tabindex="0">
+        <h3>Single Domain</h3>
+        <p>For small businesses and organizations websites.<span class="info-icon" title="Organization Validation SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="ov-single-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="ov-single-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="ov-single-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹2999 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>Wildcard</h3>
+        <p>Secure all subdomains with one certificate.<span class="info-icon" title="Wildcard SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="ov-wildcard-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="ov-wildcard-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="ov-wildcard-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹26533 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>Multi-Domain</h3>
+        <p>Secure multiple domains with one certificate.<span class="info-icon" title="Multi-Domain SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="ov-multi-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="ov-multi-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="ov-multi-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹17200 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="dropdown-container">
+          <label for="ov-multi-domains">Domains</label>
+          <select id="ov-multi-domains" name="ov-multi-domains" aria-label="Select number of domains">
+            <option value="1">Upto 1</option>
+            <option value="2">Upto 2</option>
+            <option value="3">Upto 3</option>
+            <option value="4" selected>Upto 4</option>
+            <option value="5">Upto 5</option>
+          </select>
+          <span>Each Extra SAN Cost ₹5750 /Yr</span>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>Multi-Domain with Wildcard</h3>
+        <p>Secures entire network of sites with one certificate.<span class="info-icon" title="Multi-Domain Wildcard SSL"></span></p>
+        <div class="duration-options" role="radiogroup" aria-label="Select duration">
+          <label><input type="radio" name="ev-multi-wildcard-duration" value="3" checked /> 3 Years</label>
+          <label><input type="radio" name="ev-multi-wildcard-duration" value="2" /> 2 Years</label>
+          <label><input type="radio" name="ev-multi-wildcard-duration" value="1" /> 1 Year</label>
+        </div>
+        <div class="price">₹44200 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button">Buy Now</button>
+          <button class="btn-cart" type="button">Add To Cart</button>
+        </div>
+        <div class="dropdown-container">
+          <label for="ev-multi-wildcard-domains">Domains</label>
+          <select id="ev-multi-wildcard-domains" name="ev-multi-wildcard-domains" aria-label="Select number of domains">
+            <option value="1">Upto 1</option>
+            <option value="2">Upto 2</option>
+            <option value="3">Upto 3</option>
+            <option value="4" selected>Upto 4</option>
+            <option value="5">Upto 5</option>
+          </select>
+          <span>Each Extra SAN Cost ₹33333 /Yr</span>
+        </div>
+        <div class="links">
+          <span>Show Features</span>
+          <span>Learn More</span>
+        </div>
+      </article>
+    </div>
+  </section>
+</body>
+</html>

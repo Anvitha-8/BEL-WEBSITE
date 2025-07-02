@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMIME Certificates - Bharat Electronics Limited</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, rgba(0, 51, 102, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url('cyb.webp');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #222;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #222;
+      font-weight: 700;
+    }
+    .home-logo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      z-index: 1000;
+    }
+    .home-logo:hover,
+    .home-logo:focus {
+      transform: scale(1.1);
+      outline: none;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 0 auto 60px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      border-left: 4px solid #006666; /* changed to teal accent */
+      padding: 20px 25px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 102, 102, 0.3);
+    }
+    .card h3 {
+      color: #006666;
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+      color: #444;
+    }
+    .details {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #222;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #006666;
+    }
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+    .btn-buy {
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex: 1;
+      text-align: center;
+    }
+    .btn-buy:hover {
+      background-color: #e03e3e;
+    }
+    .btn-cart {
+      background-color: #006666;
+      border: none;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex: 1;
+      text-align: center;
+    }
+    .btn-cart:hover {
+      background-color: #004d4d;
+    }
+    .highlight-box {
+      background-color: #d1f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .highlight-box h3 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      color: #006666;
+    }
+    .highlight-list {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .highlight-item {
+      flex: 1 1 200px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #444;
+    }
+    .highlight-item svg {
+      fill: #006666;
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+      .btn-buy, .btn-cart {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>SMIME Certificates</h1>
+  <a href="index.html" aria-label="Home" class="home-logo" title="Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#6a1b9a" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </a>
+
+  <section class="section" aria-label="SMIME Certificates">
+    <p>Elevate the security of your email communications by utilizing our S/MIME certificates for digital signing and encryption. With these certificates in place, you can ensure the authenticity, confidentiality, and integrity of your messages, safeguarding sensitive information from unauthorized access and tampering.</p>
+    <div class="cards">
+      <article class="card" tabindex="0">
+        <h3>Simple</h3>
+        <p>Secure your email by digitally signing and encrypting communications with our Simple S MIME certificates.</p>
+        <div class="details">Validity <span style="float:right;">2 Year <a href="#" style="color:#2196f3; text-decoration:none;">more</a></span></div>
+        <div class="price">₹1400 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button" onclick="alert('Redirecting to payment gateway')">Buy Now</button>
+          <button class="btn-cart" type="button" onclick="alert('Redirecting to payment gateway')">Add To Cart</button>
+        </div>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Personal</h3>
+        <p>By digitally signing and encrypting your emails, you can ensure that your messages remain private, authentic, and tamper-proof.</p>
+        <div class="details">Validity <span style="float:right;">2 Year <a href="#" style="color:#2196f3; text-decoration:none;">more</a></span></div>
+        <div class="price">₹1395 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button" onclick="alert('Redirecting to payment gateway')">Buy Now</button>
+          <button class="btn-cart" type="button" onclick="alert('Redirecting to payment gateway')">Add To Cart</button>
+        </div>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Professional</h3>
+        <p>Ensure the utmost security and professionalism in your email communications by utilizing our S MIME certificates for digital signing and encryption.</p>
+        <div class="details">Validity <span style="float:right;">2 Year <a href="#" style="color:#2196f3; text-decoration:none;">more</a></span></div>
+        <div class="price">₹3241 /Yr</div>
+        <div class="buttons">
+          <button class="btn-buy" type="button" onclick="alert('Redirecting to payment gateway')">Buy Now</button>
+          <button class="btn-cart" type="button" onclick="alert('Redirecting to payment gateway')">Add To Cart</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="highlight-box" aria-label="Benefits of SMIME Certificates">
+    <h3>In simple words, our S MIME certificates help you to:</h3>
+    <div class="highlight-list">
+      <div class="highlight-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Prevent tampering</span>
+      </div>
+      <div class="highlight-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Ensure content integrity</span>
+      </div>
+      <div class="highlight-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Keep sensitive info private</span>
+      </div>
+      <div class="highlight-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Prove authorship</span>
+      </div>
+      <div class="highlight-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Ensure message privacy</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

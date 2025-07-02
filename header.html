@@ -1,0 +1,258 @@
+<header>
+  <style>
+    /* Header styles */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      z-index: 10;
+      color: white;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: blue;
+      text-transform: uppercase;
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav > ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav > ul > li {
+      position: relative;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    nav > ul > li > a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 5px;
+      display: inline-block;
+    }
+    /* Dropdown menu */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      color: #333;
+      min-width: 200px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      padding: 10px 0;
+      z-index: 20;
+    }
+    .dropdown a {
+      padding: 8px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: normal;
+      display: block;
+    }
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+    /* Show dropdown when active */
+    .dropdown.active {
+      display: flex;
+    }
+    /* Language and contact */
+    .extras {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .extras button {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+  <div class="logo">
+    BEL
+  </div>
+  <nav>
+    <ul>
+      <li><a href="register.html">Register</a></li>
+      <li id="identityPKI">
+        <a href="javascript:void(0)">Identity &amp; PKI &#x25BE;</a>
+        <div class="dropdown" id="dropdownIdentityPKI" style="min-width: 400px;">
+          <div style="display: flex; gap: 40px; padding: 20px;">
+            <div style="flex: 1 1 180px;">
+              <h4 style="margin: 0 0 10px 0; font-weight: bold; color: #333;">SSL Certificates</h4>
+              <a href="ssl-certificates.html" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">SSL/TLS Certificates</a>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Enterprise PKI</a>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">ePassport &amp; Payment PKI</a>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Authentication &amp; Access Management</a>
+            </div>
+            <div style="flex: 1 1 180px; border-left: 1px solid #ccc; padding-left: 20px;">
+              <h4 style="margin: 0 0 10px 0; font-weight: bold; color: #333;">SMIME Certificates</h4>
+              <a href="smime-certificates.html" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">SMIME Certificates</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="esignatureSolutions">
+        <a href="javascript:void(0)">eSignature Solutions &#x25BE;</a>
+        <div class="dropdown" id="dropdownEsignatureSolutions">
+          <a href="#">emSigner Workflow</a>
+          <a href="#">emSigner Enterprise</a>
+          <a href="#">emSigner for Banks</a>
+          <a href="#">as-a-service</a>
+          <a href="#">emSigner.com</a>
+        </div>
+      </li>
+      <li id="resources">
+        <a href="javascript:void(0)">Resources &#x25BE;</a>
+        <div class="dropdown" id="dropdownResources" style="min-width: 500px;">
+          <div style="display: flex; gap: 60px; padding: 20px;">
+            <div style="flex: 1 1 250px;">
+              <h4 style="margin: 0 0 10px 0; font-weight: bold; color: #333;">Document Library</h4>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">All Resources</a>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Case Studies</a>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Datasheets</a>
+              <a href="faq.html" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">FAQs</a>
+            </div>
+            <div style="flex: 1 1 250px; border-left: 1px solid #ccc; padding-left: 20px;">
+              <h4 style="margin: 0 0 10px 0; font-weight: bold; color: #333;">Connect With Us</h4>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Webinars</a>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Reports</a>
+              <h5 style="margin: 15px 0 5px 0; font-weight: bold; color: #333;">Thought Leadership</h5>
+              <a href="#" style="display: block; padding: 5px 0; color: #333; text-decoration: none;">Blog</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="global">
+        <a href="javascript:void(0)">Global &#x25BE;</a>
+        <div class="dropdown" id="dropdownGlobal">
+          <a href="#">INDIA</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="extras">
+    <div id="languageDropdown" style="position: relative;">
+      <button id="languageBtn" style="background: transparent; border: 1px solid white; color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-weight: bold;">
+        🌐 English &#x25BE;
+      </button>
+      <div class="dropdown" id="dropdownLanguage" style="right: 0; left: auto; min-width: 120px;">
+        <a href="#" data-lang="en">English</a>
+        <a href="#" data-lang="kn">Kannada</a>
+      </div>
+    </div>
+    <button onclick="window.location.href='contact.html'">Contact us ></button>
+  </div>
+  <script>
+    // Dropdown toggle on click
+    const dropdowns = [
+      {btnId: 'identityPKI', dropdownId: 'dropdownIdentityPKI'},
+      {btnId: 'esignatureSolutions', dropdownId: 'dropdownEsignatureSolutions'},
+      {btnId: 'resources', dropdownId: 'dropdownResources'},
+      {btnId: 'global', dropdownId: 'dropdownGlobal'}
+    ];
+
+    dropdowns.forEach(({btnId, dropdownId}) => {
+      const btn = document.getElementById(btnId);
+      const dropdown = document.getElementById(dropdownId);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Close other dropdowns
+        dropdowns.forEach(({dropdownId: otherId}) => {
+          if (otherId !== dropdownId) {
+            document.getElementById(otherId).classList.remove('active');
+          }
+        });
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+      });
+    });
+
+    // Language dropdown toggle
+    const languageBtn = document.getElementById('languageBtn');
+    const languageDropdown = document.getElementById('dropdownLanguage');
+
+    languageBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      languageDropdown.classList.toggle('active');
+    });
+
+    // Close dropdowns if clicked outside
+    document.addEventListener('click', () => {
+      dropdowns.forEach(({dropdownId}) => {
+        document.getElementById(dropdownId).classList.remove('active');
+      });
+      languageDropdown.classList.remove('active');
+    });
+
+    // Language switcher function
+    function switchLanguage(lang) {
+      // Update hero text
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'kn' ? el.getAttribute('data-kn') : el.getAttribute('data-en');
+      });
+
+      // Update navigation menu text
+      const navTextMap = {
+        'register': { en: 'Register', kn: 'ನೋಂದಣಿ' },
+        'identityPKI': { en: 'Identity & PKI', kn: 'ಐಡೆಂಟಿಟಿ ಮತ್ತು ಪಿಕೆಐ' },
+        'esignatureSolutions': { en: 'eSignature Solutions', kn: 'ಇ-ಸಹಿ ಪರಿಹಾರಗಳು' },
+        'resources': { en: 'Resources', kn: 'ಸಂಪನ್ಮೂಲಗಳು' },
+        'global': { en: 'Global', kn: 'ಗ್ಲೋಬಲ್' },
+        'contact': { en: 'Contact us >', kn: 'ಸಂಪರ್ಕಿಸಿ >' },
+        'languageBtn': { en: '🌐 English ▼', kn: '🌐 ಕನ್ನಡ ▼' }
+      };
+
+      // Update nav links
+      document.querySelector('nav ul li a[href="register.html"]').textContent = lang === 'kn' ? navTextMap.register.kn : navTextMap.register.en;
+      document.querySelector('#identityPKI > a').textContent = lang === 'kn' ? navTextMap.identityPKI.kn + ' ▼' : navTextMap.identityPKI.en + ' ▼';
+      document.querySelector('#esignatureSolutions > a').textContent = lang === 'kn' ? navTextMap.esignatureSolutions.kn + ' ▼' : navTextMap.esignatureSolutions.en + ' ▼';
+      document.querySelector('#resources > a').textContent = lang === 'kn' ? navTextMap.resources.kn + ' ▼' : navTextMap.resources.en + ' ▼';
+      document.querySelector('#global > a').textContent = lang === 'kn' ? navTextMap.global.kn + ' ▼' : navTextMap.global.en + ' ▼';
+
+      // Update extras buttons
+      document.querySelector('.extras button[onclick*="contact.html"]').textContent = lang === 'kn' ? navTextMap.contact.kn : navTextMap.contact.en;
+      document.getElementById('languageBtn').textContent = lang === 'kn' ? navTextMap.languageBtn.kn : navTextMap.languageBtn.en;
+
+      // Store language preference
+      localStorage.setItem('siteLanguage', lang);
+    }
+
+    // Language selection event
+    document.querySelectorAll('#dropdownLanguage a').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectedLang = e.target.getAttribute('data-lang');
+        switchLanguage(selectedLang);
+        document.getElementById('dropdownLanguage').classList.remove('active');
+      });
+    });
+
+    // On page load, set language from localStorage or default to English
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('siteLanguage') || 'en';
+      switchLanguage(savedLang);
+    });
+  </script>
+</header>
